@@ -4,6 +4,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import LightRays from "@/components/lightRays";
 import Navbar from "@/components/Navbar";
+import { PHProvider } from "./providers";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
@@ -32,6 +33,7 @@ export default function RootLayout({
       lang="en"
       className={cn("min-h-screen", "antialiased", schibstedGrotesk.variable, martianMono.variable, "font-sans", geist.variable)}
     >
+      <PHProvider>
       <body className="min-h-full flex flex-col">
       <Navbar />
       <div className="absolute inset-0 top-0 z-[-1] min-h-screen bg-black">
@@ -52,6 +54,7 @@ export default function RootLayout({
       </div>
       <main className="text-white">{children}</main>
         </body>
+      </PHProvider>
     </html>
   );
 }
